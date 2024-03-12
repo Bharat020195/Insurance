@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pendings",
+  "info": {
+    "singularName": "pending",
+    "pluralName": "pendings",
+    "displayName": "Pending"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CarName": {
+      "type": "string",
+      "required": true
+    },
+    "CarMake": {
+      "type": "string",
+      "required": true
+    },
+    "VehicleNo": {
+      "type": "string"
+    },
+    "ClaimNumber": {
+      "type": "string",
+      "required": true
+    },
+    "ClaimDate": {
+      "type": "date"
+    },
+    "PolicyNumber": {
+      "type": "string",
+      "required": true
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "pendings"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accepteds",
+  "info": {
+    "singularName": "accepted",
+    "pluralName": "accepteds",
+    "displayName": "Accepted",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CarName": {
+      "type": "string",
+      "required": true
+    },
+    "CarMake": {
+      "type": "biginteger",
+      "required": true
+    },
+    "VehicleNo": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "ClaimDate": {
+      "type": "date",
+      "required": true
+    },
+    "ClaimNumber": {
+      "type": "string",
+      "required": true
+    },
+    "PolicyNumber": {
+      "type": "string",
+      "required": true
+    },
+    "CarImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "accepteds"
+    }
+  }
+}
